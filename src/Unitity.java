@@ -10,34 +10,13 @@ public class Unitity {
     private static final Scanner scanner = new Scanner(System.in);
 
     /**
-     * Check if a integer is entered from the keyboard.
-     * If the entered value is not a number, please re-enter the value.
-     *
-     * @param msg is information need display in screen.
-     * @return a valid integer.
-     */
-    public static int checkUserInputInt(String msg) {
-        while (true) {
-            try {
-                System.out.print(msg);
-                String input = scanner.nextLine().trim();
-                int number = Integer.parseInt(input);
-                return number;
-            } catch (NumberFormatException e) {
-                System.out.println("Value of matrix is digit.");
-            }
-        }
-    }
-
-    /**
-     * Check if a positive integer (greater than 0) is entered from the keyboard.
-     * Use for number of row and number of column.
-     * If the entered value is less than 1 or not a number, please re-enter the value.
+     * Check if a positive integer is entered from the keyboard.
+     * If the entered value is less than 0 or not a number, please re-enter the value.
      *
      * @param msg is information need display in screen.
      * @return a valid positive integer.
      */
-    public static int checkUserInputPositiveInt(String msg) {
+    public static int checkUserInputInt(String msg) {
         while (true) {
             try {
                 System.out.print(msg);
@@ -46,10 +25,10 @@ public class Unitity {
                 if (number > 0) {
                     return number;
                 } else {
-                    System.out.println("Number must be greater than 0. Please enter again.");
+                    System.err.println("Number must be greater than 0. Please enter again.");
                 }
             } catch (NumberFormatException e) {
-                System.out.println("Value of matrix is digit.");
+                System.err.println("Value of matrix is digit.");
             }
         }
     }
@@ -70,11 +49,11 @@ public class Unitity {
                 if (number >= 1 && number <= 4) {
                     return number;
                 } else {
-                    System.out.println("Number must be greater than 1 and less than 4. Please enter again.");
+                    System.err.println("Number must be 1-4. Please enter again.");
                 }
 
             } catch (NumberFormatException e) {
-                System.out.println("Invalid format! Please enter again.");
+                System.err.println("Invalid format! Please enter again.");
             }
         }
     }

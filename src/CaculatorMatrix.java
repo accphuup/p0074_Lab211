@@ -35,7 +35,7 @@ public class CaculatorMatrix {
             displayResult(matrix1, matrix2, "+");
         } // Row and column are different.
         else {
-            System.out.println("Row and column of two matrix are different.");
+            System.err.println("Row and column of two matrix are different.");
             matrixResult = null;
         }
         return matrixResult;
@@ -65,7 +65,7 @@ public class CaculatorMatrix {
             displayResult(matrix1, matrix2, "-");
         } // Row and column are different.
         else {
-            System.out.println("Row and column of two matrix are different.");
+            System.err.println("Row and column of two matrix are different.");
             matrixResult = null;
         }
         return matrixResult;
@@ -97,7 +97,7 @@ public class CaculatorMatrix {
             displayResult(matrix1, matrix2, "*");
         } // Row and column are different.
         else {
-            System.out.println("Row and column of two matrix are different.");
+            System.err.println("Column of matrix 1 must be equal to row of matrix 2.");
             matrixResult = null;
         }
         return matrixResult;
