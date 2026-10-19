@@ -1,4 +1,3 @@
-
 /**
  * CaculatorMatrix to addition, subtraction, multiplication matrix.
  *
@@ -17,8 +16,9 @@ public class CaculatorMatrix {
      *
      * @param matrix1 from user enter.
      * @param matrix2 from user enter.
+     * @return the result matrix (null if 2 matrix are not the same size).
      */
-    public void additionMatrix(int[][] matrix1, int[][] matrix2) {
+    public int[][] additionMatrix(int[][] matrix1, int[][] matrix2) {
         int row1 = matrix1.length;
         int col1 = matrix1[0].length;
         int row2 = matrix2.length;
@@ -26,18 +26,19 @@ public class CaculatorMatrix {
 
         // Check if 2 matrix have the same row and column then addition.
         if (row1 == row2 && col1 == col2) {
-            this.matrixResult = new int[row1][col1];
+            matrixResult = new int[row1][col1];
             for (int i = 0; i < row1; i++) {
                 for (int j = 0; j < col1; j++) {
-                    this.matrixResult[i][j] = matrix1[i][j] + matrix2[i][j];
+                    matrixResult[i][j] = matrix1[i][j] + matrix2[i][j];
                 }
             }
             displayResult(matrix1, matrix2, "+");
         } // Row and column are different.
         else {
             System.out.println("Row and column of two matrix are different.");
-            this.matrixResult = null;
+            matrixResult = null;
         }
+        return matrixResult;
     }
 
     /**
@@ -45,27 +46,29 @@ public class CaculatorMatrix {
      *
      * @param matrix1 from user enter.
      * @param matrix2 from user enter.
+     * @return the result matrix (null if 2 matrix are not the same size).
      */
-    public void subtractionMatrix(int[][] matrix1, int[][] matrix2) {
+    public int[][] subtractionMatrix(int[][] matrix1, int[][] matrix2) {
         int row1 = matrix1.length;
         int col1 = matrix1[0].length;
         int row2 = matrix2.length;
         int col2 = matrix2[0].length;
 
-        // Check if 2 matrix have the same row and column then addition.
+        // Check if 2 matrix have the same row and column then subtraction.
         if (row1 == row2 && col1 == col2) {
-            this.matrixResult = new int[row1][col1];
+            matrixResult = new int[row1][col1];
             for (int i = 0; i < row1; i++) {
                 for (int j = 0; j < col1; j++) {
-                    this.matrixResult[i][j] = matrix1[i][j] - matrix2[i][j];
+                    matrixResult[i][j] = matrix1[i][j] - matrix2[i][j];
                 }
             }
             displayResult(matrix1, matrix2, "-");
         } // Row and column are different.
         else {
             System.out.println("Row and column of two matrix are different.");
-            this.matrixResult = null;
+            matrixResult = null;
         }
+        return matrixResult;
     }
 
     /**
@@ -73,20 +76,21 @@ public class CaculatorMatrix {
      *
      * @param matrix1 from user enter.
      * @param matrix2 from user enter.
+     * @return the result matrix (null if column of matrix 1 != row of matrix 2).
      */
-    public void multiplicationMatrix(int[][] matrix1, int[][] matrix2) {
+    public int[][] multiplicationMatrix(int[][] matrix1, int[][] matrix2) {
         int row1 = matrix1.length;
         int col1 = matrix1[0].length;
         int row2 = matrix2.length;
         int col2 = matrix2[0].length;
 
-        // Check if 2 matrix have the same row and column then addition.
+        // Check if column of matrix 1 equals row of matrix 2 then multiplication.
         if (col1 == row2) {
-            this.matrixResult = new int[row1][col2];
+            matrixResult = new int[row1][col2];
             for (int i = 0; i < row1; i++) {
                 for (int j = 0; j < col2; j++) {
                     for (int k = 0; k < col1; k++) {
-                        this.matrixResult[i][j] += matrix1[i][k] * matrix2[k][j];
+                        matrixResult[i][j] += matrix1[i][k] * matrix2[k][j];
                     }
                 }
             }
@@ -94,8 +98,9 @@ public class CaculatorMatrix {
         } // Row and column are different.
         else {
             System.out.println("Row and column of two matrix are different.");
-            this.matrixResult = null;
+            matrixResult = null;
         }
+        return matrixResult;
     }
 
     /**
@@ -114,7 +119,7 @@ public class CaculatorMatrix {
             System.out.println();
         }
         System.out.println(msg);
-        
+
         //Display matrix 2.
         for (int i = 0; i < matrix2.length; i++) {
             for (int j = 0; j < matrix2[0].length; j++) {
@@ -123,11 +128,11 @@ public class CaculatorMatrix {
             System.out.println();
         }
         System.out.println("=");
-        
+
         //Display matrix result.
-        for (int i = 0; i < this.matrixResult.length; i++) {
-            for (int j = 0; j < this.matrixResult[0].length; j++) {
-                System.out.print("[" + this.matrixResult[i][j] + "]");
+        for (int i = 0; i < matrixResult.length; i++) {
+            for (int j = 0; j < matrixResult[0].length; j++) {
+                System.out.print("[" + matrixResult[i][j] + "]");
             }
             System.out.println();
         }
