@@ -16,13 +16,26 @@ public class Unitity {
      * @param msg is information need display in screen.
      * @return a valid positive integer.
      */
-    public static int checkUserInputInt(String msg) {
+    public static int checkUserInputElementMatrix(String msg) {
         while (true) {
             try {
                 System.out.print(msg);
                 String input = scanner.nextLine().trim();
                 int number = Integer.parseInt(input);
-                if (number > 0) {
+               return number;
+            } catch (NumberFormatException e) {
+                System.err.println("Value of matrix is digit.");
+            }
+        }
+    }
+    
+      public static int checkUserInputMatrix(String msg) {
+        while (true) {
+            try {
+                System.out.print(msg);
+                String input = scanner.nextLine().trim();
+                int number = Integer.parseInt(input);
+               if (number > 0) {
                     return number;
                 } else {
                     System.err.println("Number must be greater than 0. Please enter again.");
@@ -32,7 +45,7 @@ public class Unitity {
             }
         }
     }
-
+ 
     /**
      * Check if a integer (form 1 to 4) is entered from the keyboard.
      * If the entered value is less than 1 or greater than 4 or not a number, please re-enter the value.

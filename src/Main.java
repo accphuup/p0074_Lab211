@@ -16,24 +16,24 @@ public class Main {
                 // Case to use addition 2 matrix.
                 case 1:
                     System.out.println("------- Addition -------");
-                    int[][] matrix1a = enterMatrix();
-                    int[][] matrix2a = enterMatrix();
+                    int[][] matrix1a = enterMatrix(1);
+                    int[][] matrix2a = enterMatrix(2);
                     caculator.additionMatrix(matrix1a, matrix2a);
                     break;
                     
                 // Case to use subtraction 2 matrix.
                 case 2:
                     System.out.println("------- Subtraction -------");
-                    int[][] matrix1b = enterMatrix();
-                    int[][] matrix2b = enterMatrix();
+                    int[][] matrix1b = enterMatrix(1);
+                    int[][] matrix2b = enterMatrix(2);
                     caculator.subtractionMatrix(matrix1b, matrix2b);
                     break;
                 
                 // Case to use multiplication 2 matrix.
                 case 3:
                     System.out.println("------- Multiplication -------");
-                    int[][] matrix1c = enterMatrix();
-                    int[][] matrix2c = enterMatrix();
+                    int[][] matrix1c = enterMatrix(1);
+                    int[][] matrix2c = enterMatrix(2);
                     caculator.multiplicationMatrix(matrix1c, matrix2c);
                     break;
                 case 4:
@@ -59,13 +59,13 @@ public class Main {
      * Method use enter matrix.
      * @return matrix form user.
      */
-    public static int[][] enterMatrix(){
-        int row = Unitity.checkUserInputInt("Enter Row Matrix: ");
-        int col = Unitity.checkUserInputInt("Enter Column Matrix: ");
+    public static int[][] enterMatrix(int matrixNumber){
+        int row = Unitity.checkUserInputMatrix("Enter Row Matrix"+ matrixNumber + ":" );
+        int col = Unitity.checkUserInputMatrix("Enter Column Matrix"+ matrixNumber + ":" );
         int[][] matrix = new int[row][col];
         for(int i = 0; i < row; i ++){
             for(int j = 0; j < col; j ++){
-                matrix[i][j] = Unitity.checkUserInputInt("Enter Matrix" + (i + 1) + "[" + (i + 1) + "][" + (j + 1) + "]:");
+                matrix[i][j] = Unitity.checkUserInputElementMatrix("Enter Matrix" + matrixNumber + "[" + (i + 1) + "][" + (j + 1) + "]:");
             }
         }
         return matrix;
