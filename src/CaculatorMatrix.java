@@ -127,7 +127,7 @@ public class CaculatorMatrix {
             }
             System.out.println();
         }
-        System.out.println("=");
+       System.out.println("=");
 
         //Display matrix result.
         for (int i = 0; i < matrixResult.length; i++) {
@@ -136,5 +136,6 @@ public class CaculatorMatrix {
             }
             System.out.println();
         }
+       
     }
 }
